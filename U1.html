@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link href="style.css" rel="stylesheet">
+    <script src="functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div>
+        <h1>
+            Wiener U-Bahnen
+        </h1>
+        <p>
+            Sehr geehrte Fahrgäste! Diese Website bietet einen genauen Überblick zu den Ubahnlinien!<br>
+            Wir wünschen viel Spaß und eine angenehme Fahrt!
+        </p>
+
+        <div class = "rechts">
+            <figure>
+                <img class ="center" id="bild" src = "u-bahn-plan-wien-viennaAT.png">
+                <figcaption class = "titel">Fahrplan Ubahnlinien Wien</figcaption>
+            </figure>
+                
+            
+        </div>
+        
+        <h2 onmouseover = "onMouseOver()">
+            Informationen
+        </h2>
+        <p>
+            Folgende Inforamtionen sind zu allen Linien einsehbar:<br>
+            Wie viele Züge sind unterwegs?<br>
+            Wie stark sind sie ausgelastet?<br>
+            Wann war der letzte Stop?<br>
+            Wie heißen die Zugführer/-innen?
+        </p>
+
+        <h3>
+            Linien
+        </h3>
+        <p>
+            Hier sind die verschiedenen Ubahnlinien auszuwählen! Einfach per Klick auf die zugehörige Website wechseln!<br>
+            Da die U1 die am stärksten befahrene Linie ist, ist sie auf der Startseite zu sehen!
+        </p>
+
+        <div class ="mypanel"></div>
+
+        <p>
+            Hier geht es weiter zur <a href = "U2.html">U2.</a><br>
+            Hier geht es weiter zur <a href = "U3.html">U3.</a><br>
+            Hier geht es weiter zur <a href = "U4.html">U4.</a><br>
+            Hier geht es weiter zur <a href = "U6.html">U6.</a>
+        </p>
+        
+    </div>
+
+    <script>
+        $.getJSON('https://atp.fhstp.ac.at/subwayInformation', function(data) {
+
+            var text = `Bahn: U1<br>
+                        Züge unterwegs: ${data.U1.zuegeUnterwegs}<br>
+                        Letzte Stops vor: ${data.U1.letzteStopsVor}<br>
+                        Auslastung: ${data.U1.zuegeAuslastung}<br>
+                        Zugführer: ${data.U1.zugfuehrer}`
+
+            $(".mypanel").html(text);
+            
+        })
+    </script>
+
+<div>
+    <p id="onclick">
+        Anbei der Link zu den Quellen.
+    </p>
+    <a id = "link" href="copyright.html"> Copyright</a><br><br>
+
+    <button onclick="onButtonClick()"> Mysteriöser Knopf?!?!?!
+    </button>
+</div>
+
+</body>
+</html>
+
+

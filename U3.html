@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link href="style.css" rel="stylesheet">
+    <script src="functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<div>
+    <h2>
+        U3
+    </h2>
+    <p>
+        Informationen zur Linie U3:<br>
+    </p>
+    <div class = "rechts">
+        <figure>
+            <img class ="center" src = "u-bahnlinie-u3-stubentor-station-wien-austria-europe-be3mp9.jpg">
+            <figcaption class = "titel">Station U3 Stubentor</figcaption>
+        </figure>
+        </div>
+</div>
+
+<div class ="mypanel"></div>
+
+
+
+<script>
+    $.getJSON('https://atp.fhstp.ac.at/subwayInformation', function(data) {
+
+        var text = `Bahn: U3<br>
+                    Züge unterwegs: ${data.U3.zuegeUnterwegs}<br>
+                    Letzte Stops vor: ${data.U3.letzteStopsVor}<br>
+                    Auslastung: ${data.U3.zuegeAuslastung}<br>
+                    Zugführer: ${data.U3.zugfuehrer}`
+
+        $(".mypanel").html(text);
+        
+    })
+</script>
+
+<p>
+    Hier geht es weiter zur <a href = "U1.html">Startseite.</a><br>
+    Hier geht es weiter zur <a href = "U2.html">U2.</a><br>
+    Hier geht es weiter zur <a href = "U4.html">U4.</a><br>
+    Hier geht es weiter zur <a href = "U6.html">U6.</a>
+</p>
+
+</body>
+</html>

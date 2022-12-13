@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link href="style.css" rel="stylesheet">
+    <script src="functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<div>
+    <h2>
+        U4
+    </h2>
+    <p>
+        Informationen zur Linie U4:<br>
+    </p>
+    <div class = "rechts">
+        <figure>
+            <img class ="center" src = "u-bahnlinie-u4-station-schottenring-r1ek2d.jpg">
+            <figcaption class = "titel">Station U4 Schottenring</figcaption>
+        </figure>
+        </div>
+</div>
+
+<div class ="mypanel"></div>
+
+
+
+<script>
+    $.getJSON('https://atp.fhstp.ac.at/subwayInformation', function(data) {
+
+        var text = `Bahn: U4<br>
+                    Züge unterwegs: ${data.U4.zuegeUnterwegs}<br>
+                    Letzte Stops vor: ${data.U4.letzteStopsVor}<br>
+                    Auslastung: ${data.U4.zuegeAuslastung}<br>
+                    Zugführer: ${data.U4.zugfuehrer}`
+
+        $(".mypanel").html(text);
+        
+    })
+</script>
+
+<p>
+    Hier geht es weiter zur <a href = "U1.html">Startseite.</a><br>
+    Hier geht es weiter zur <a href = "U2.html">U2.</a><br>
+    Hier geht es weiter zur <a href = "U3.html">U3.</a><br>
+    Hier geht es weiter zur <a href = "U6.html">U6.</a>
+</p>
+
+</body>
+</html>

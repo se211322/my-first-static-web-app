@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link href="style.css" rel="stylesheet">
+    <script src="functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<div>
+    <h2>
+        U2
+    </h2>
+    <p>
+        Informationen zur Linie U2:<br>
+    </p>
+    <div class = "rechts">
+        <figure>
+            <img class ="center" src = "wien-u-bahn-linie-u2-station-volkstheater-r1ehyr.jpg">
+            <figcaption class = "titel">Station U2 Volkstheater</figcaption>
+        </figure>
+        </div>
+</div>
+
+<div class ="mypanel"></div>
+
+
+<script>
+    $.getJSON('https://atp.fhstp.ac.at/subwayInformation', function(data) {
+
+        var text = `Bahn: U2<br>
+                    Züge unterwegs: ${data.U2.zuegeUnterwegs}<br>
+                    Letzte Stops vor: ${data.U2.letzteStopsVor}<br>
+                    Auslastung: ${data.U2.zuegeAuslastung}<br>
+                    Zugführer: ${data.U2.zugfuehrer}`
+
+        $(".mypanel").html(text);
+        
+    })
+</script>
+
+<p>
+    Hier geht es weiter zur <a href = "U1.html">Startseite.</a><br>
+    Hier geht es weiter zur <a href = "U3.html">U3.</a><br>
+    Hier geht es weiter zur <a href = "U4.html">U4.</a><br>
+    Hier geht es weiter zur <a href = "U6.html">U6.</a>
+</p>
+
+</body>
+</html>

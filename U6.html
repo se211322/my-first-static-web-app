@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link href="style.css" rel="stylesheet">
+    <script src="functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<div>
+    <h2>
+        U6
+    </h2>
+    <p>
+        Informationen zur Linie U6:<br>
+    </p>
+    <div class = "rechts">
+        <figure>
+            <img class ="center" src = "wien-u-bahn-linie-u6-gurtellinie-fruher-stadtbahn-stadtbahnstation-burggasse-stadthalle-wien-u-bahn-linie-u6-dem-ehemaligen-historischen-stadtbahn-r1gy30.jpg">
+            <figcaption class = "titel">Station U6 Stadthalle</figcaption>
+        </figure>
+        </div>
+</div>
+
+<div class ="mypanel"></div>
+
+
+
+<script>
+    $.getJSON('https://atp.fhstp.ac.at/subwayInformation', function(data) {
+
+        var text = `Bahn: U6<br>
+                    Züge unterwegs: ${data.U6.zuegeUnterwegs}<br>
+                    Letzte Stops vor: ${data.U6.letzteStopsVor}<br>
+                    Auslastung: ${data.U6.zuegeAuslastung}<br>
+                    Zugführer: ${data.U6.zugfuehrer}`
+
+        $(".mypanel").html(text);
+        
+    })
+</script>
+
+<p>
+    Hier geht es weiter zur <a href = "U1.html">Startseite.</a><br>
+    Hier geht es weiter zur <a href = "U2.html">U2.</a><br>
+    Hier geht es weiter zur <a href = "U3.html">U3.</a><br>
+    Hier geht es weiter zur <a href = "U4.html">U4.</a>
+</p>
+
+</body>
+</html>
